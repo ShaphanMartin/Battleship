@@ -4,6 +4,11 @@ public abstract class Player {
 	
 	public abstract void Postion();
 	
+	public abstract void GrirdSize();
+	
+	
+
+	
 	
 	
 
