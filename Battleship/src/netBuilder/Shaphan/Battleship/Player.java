@@ -1,6 +1,8 @@
 package netBuilder.Shaphan.Battleship;
 
-public class Player {
+public abstract class Player {
+	
+	public abstract void Postion();
 	
 	
 	
