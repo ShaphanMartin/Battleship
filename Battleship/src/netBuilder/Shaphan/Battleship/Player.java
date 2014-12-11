@@ -1,9 +1,14 @@
 package netBuilder.Shaphan.Battleship;
 
+import java.util.ArrayList;
+
 public class Player {
 
 	int noShots = 5;
 	int gridSize;
+	ArrayList<int[]> shiplist = new ArrayList<int[]>();
+
+
 
 	public boolean checkValidCoord(int[] checkCoords, int gridSize) {
 		boolean inRange = false;
@@ -23,7 +28,7 @@ public class Player {
 				inRange = true;
 			}
 		} while (!inRange);
-
+/*
 		if (inRange && notHitShip) {
 			ValidCoord = true;
 
@@ -32,7 +37,8 @@ public class Player {
 			ValidCoord = false;
 			return ValidCoord;
 		}
-
+*/
+		return ValidCoord;
 	}
 
 	public void TakeAShot(int[] shotCoords) {

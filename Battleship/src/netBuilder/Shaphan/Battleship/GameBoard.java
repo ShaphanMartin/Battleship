@@ -11,12 +11,10 @@ public class GameBoard {
 	
 	public void genGrid( int gridSize){
 		String[][] grid = new String[gridSize][gridSize];
+		
 
 	}
 	
-	
-
-
 	public void initGrid(int gridSize) {
 		for (int column = 0; column < grid.length; column++) {
 			for (int row = 0; row < grid.length; row++) {

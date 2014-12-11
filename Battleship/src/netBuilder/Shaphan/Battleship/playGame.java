@@ -18,28 +18,43 @@ public class playGame {
 		Scanner reader = new Scanner(System.in);
 		
 		String  playerName;
-		String  input2;
-		
+		String  Coordx;
+		String  Coordy;
+
 		Player player = new Player();
 		
 		
 		System.out.println("Welcome to Battleship");
 		System.out.println("Enter your Name");
-		playerName=reader.next();
+		playerName = reader.next();
+		
 		System.out.println( playerName +" enter the grid size");
 		player.setGridSize(gridSize=reader.nextInt() + 1);
 		
+		for (int i = 0; i < 5; i++) {
+			System.out.println(playerName
+					+ " enter first part of the starting coord (Letter)");
+			playerStartCoord[0] = reader.next();
+			System.out.println(playerName
+					+ " enter second part of the starting coord (Letter)");
+			playerStartCoord[1] = reader.next();
+			
+			newPlayerStartCoord = player.contvertStringToNum(playerStartCoord);
+
+			//player.shiplist.add(i,newPlayerStartCoord);
+			
+		}
+
 		
 		
-		playerStartCoord[0] = "2";
-		playerStartCoord[1] = "b";
 		
-		newPlayerStartCoord = player.contvertStringToNum(playerStartCoord);
+		
+		//newPlayerStartCoord = player.contvertStringToNum(playerStartCoord);
 		
 		playerEndCoord[0] = "5";
 		playerEndCoord[1] = "b";
 		
-		newPlayerEndCoord = player.contvertStringToNum(playerEndCoord);
+		//newPlayerEndCoord = player.contvertStringToNum(playerEndCoord);
 		
 		//System.out.println(playerStartCoord);
 		player.placeShip( newPlayerStartCoord, newPlayerEndCoord, ShipName.AircaftCarrier.getSize());
@@ -62,12 +77,13 @@ public class playGame {
 		
 		
 */
+		/*
 		test.fire(5, 5, gridSize);
 		test.fire(6, 5,gridSize);
 		test.fire(7, 5,gridSize);
 		test.fire(5, 10,gridSize);
 		test.fire(22, 25,gridSize);
-
+*/
 		test.printGrid(gridSize);
 
 
