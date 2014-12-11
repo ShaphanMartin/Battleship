@@ -22,7 +22,7 @@ public class playGame {
 		String  Coordy;
 
 		Player player = new Player();
-		
+	/*	
 		
 		System.out.println("Welcome to Battleship");
 		System.out.println("Enter your Name");
@@ -31,21 +31,24 @@ public class playGame {
 		System.out.println( playerName +" enter the grid size");
 		player.setGridSize(gridSize=reader.nextInt() + 1);
 		
-		for (int i = 0; i < 5; i++) {
+	//	for (int i = 0; i < 5; i++) {
 			System.out.println(playerName
 					+ " enter first part of the starting coord (Letter)");
+			
 			playerStartCoord[0] = reader.next();
+			
 			System.out.println(playerName
-					+ " enter second part of the starting coord (Letter)");
+					+ " enter second part of the starting coord (number)");
 			playerStartCoord[1] = reader.next();
 			
-			newPlayerStartCoord = player.contvertStringToNum(playerStartCoord);
+			System.out.println(playerStartCoord[0] + playerStartCoord[1]);
+			
 
 			//player.shiplist.add(i,newPlayerStartCoord);
 			
-		}
+		//}
 
-		
+		newPlayerStartCoord = player.contvertStringToNum(playerStartCoord);
 		
 		
 		
@@ -59,7 +62,7 @@ public class playGame {
 		//System.out.println(playerStartCoord);
 		player.placeShip( newPlayerStartCoord, newPlayerEndCoord, ShipName.AircaftCarrier.getSize());
 		
-		
+	*/	
 		
 		GameBoard test = new GameBoard();
 
@@ -77,14 +80,36 @@ public class playGame {
 		
 		
 */
-		/*
-		test.fire(5, 5, gridSize);
-		test.fire(6, 5,gridSize);
-		test.fire(7, 5,gridSize);
-		test.fire(5, 10,gridSize);
-		test.fire(22, 25,gridSize);
-*/
-		test.printGrid(gridSize);
+		int[] playerFireShot ={ 5,5 };
+		int[] playerFireShot1 ={ 6,5 };
+
+		test.fire(playerFireShot);
+		test.fire(playerFireShot1);
+
+		//test.fire(7, 5);
+		//test.fire(5, 10);
+		player.shiplist.add(playerFireShot);
+		player.shiplist.add(playerFireShot1);
+
+		System.out.println( player.shiplist.get(0));
+		System.out.println( player.shiplist.listIterator(0));
+		System.out.println( player.shiplist.toArray());
+
+
+		System.out.println( player.shiplist.iterator());
+		
+		
+
+
+		//test.printGrid();
+		
+		test.ship(6, 5);
+		test.ship(6, 5);
+		test.ship(6, 6);
+		test.ship(6, 7);
+		
+		//test.printGrid();
+		
 
 
 	}
