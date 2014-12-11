@@ -3,12 +3,21 @@ package netBuilder.Shaphan.Battleship;
 import java.util.Random;
 
 public class GameBoard {
-	int gridSize = 20;
 	char character = 'A';
 
-	String[][] grid = new String[gridSize][gridSize];
+	Player player = new Player();
+	
+	String grid[][] ;
+	
+	public void genGrid( int gridSize){
+		String[][] grid = new String[gridSize][gridSize];
 
-	public void initGrid() {
+	}
+	
+	
+
+
+	public void initGrid(int gridSize) {
 		for (int column = 0; column < grid.length; column++) {
 			for (int row = 0; row < grid.length; row++) {
 			
@@ -17,9 +26,9 @@ public class GameBoard {
 		}
 	}
 
-	public void printGrid() {
+	public void printGrid(int gridSize) {
+
 		char character = 'A';
-		int count = 1;
 		System.out.println("    \t");
 		System.out.print(grid[0][0] = "\t ");
 
@@ -28,12 +37,11 @@ public class GameBoard {
 			
 			grid[0][row] = String.valueOf(row);
 			System.out.print("  " + grid[0][row] + " \t");
-			count++;
 
 		}
 		// printing the columns labels
 
-		for (int column = 0; column < grid.length; column++) {
+		for (int column = 1; column < grid.length; column++) {
 			System.out.println();
 			System.out.println();
 			grid[1][column] = String.valueOf(character);
@@ -61,8 +69,9 @@ public class GameBoard {
 		System.out.println();
 
 	}
+/*
+	public void fire(int xCoord, int yCoord, int gridSize) {
 
-	public void fire(int xCoord, int yCoord) {
 		if (xCoord > gridSize || xCoord > gridSize){
 			System.out.println("Coordiante is too big");
 		}else if (xCoord < 0 || xCoord < 0){
@@ -74,5 +83,5 @@ public class GameBoard {
 			
 	}
 
-
+*/
 }
