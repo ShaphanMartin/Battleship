@@ -64,7 +64,7 @@ public class playGame {
 		
 	*/	
 		
-		GameBoard test = new GameBoard();
+		GameBoard playerGameBoard = new GameBoard();
 
 /*
 		
@@ -80,36 +80,103 @@ public class playGame {
 		
 		
 */
-		int[] playerFireShot ={ 5,5 };
-		int[] playerFireShot1 ={ 6,5 };
+		 playerGameBoard.printGrid();
+	        Boolean isVertical = false;
+	        int[] placingShip ={3,4};
+	        //"horizontal or verical"
+	        int count = 0;
+	        if (isVertical == true){
 
-		test.fire(playerFireShot);
-		test.fire(playerFireShot1);
+	            for (int i = placingShip[1]; i < ( placingShip[1]+5);i++){
 
-		//test.fire(7, 5);
-		//test.fire(5, 10);
-		player.shiplist.add(playerFireShot);
-		player.shiplist.add(playerFireShot1);
+	                int newX = placingShip[1]+ count;
+	                int sameY = placingShip[0];
+	                int[] shipCoord ={sameY,newX};
 
-		System.out.println( player.shiplist.get(0));
-		System.out.println( player.shiplist.listIterator(0));
-		System.out.println( player.shiplist.toArray());
+	                //playerGameBoard.shipToken(shipCoord);
+	                player.ships.add(shipCoord);
 
-
-		System.out.println( player.shiplist.iterator());
-		
-		
+	                count++;
 
 
-		//test.printGrid();
-		
-		test.ship(6, 5);
-		test.ship(6, 5);
-		test.ship(6, 6);
-		test.ship(6, 7);
-		
-		//test.printGrid();
-		
+	            }
+	        }
+
+	        if (isVertical == false){
+
+	            for (int i = placingShip[0]; i < ( placingShip[0]+5);i++){
+	                int newY = placingShip[0]+ count;
+	                int sameX = placingShip[1];
+	                int[] shipCoord ={newY,sameX};
+
+	                //playerGameBoard.shipToken(shipCoord);
+	                player.ships.add(shipCoord);
+
+	                count++;
+	            }
+	        }
+	        for (int i =0; i< 11; i++ ){
+	           /* System.out.println(" Enter y");
+	            int y = reader.nextInt();
+	            System.out.println(" Enter x");
+	            int x = reader.nextInt();
+	*/
+	            int[] playerFireShot = {i, i};
+	            playerGameBoard.fireToken(playerFireShot);
+	            player.shotsFired.add(playerFireShot);
+	        }
+
+	        for (int i = 0; i < player.ships.size() ; i++) {
+	            playerGameBoard.shipToken(player.ships.get(i));
+
+	            //todo work out the logic for it to keep one coord then loop thought the second list and checking for a match
+	                int [] fired = player.shotsFired.get(i);
+
+	                int [] shipCurrent = player.ships.get(i);
+
+	            for (int j = 0; j < player.ships.size() ; j++) {
+	                if(fired == shipCurrent ) {
+	                    //place the token of the hit coordinate
+
+	                    playerGameBoard.hitToken(player.shotsFired.get(i));
+
+	                    //set the coordinate of the macthing coord
+	                    player.shipHit.add(player.shotsFired.get(i));
+
+
+
+	                }
+	            }
+
+
+	        }
+
+
+
+
+
+	        playerGameBoard.printGrid();
+	       // int[] playerFireShot ={ 5,5 };
+	        //int[] playerFireShot1 ={ 6,5 };
+
+	       // playerGameBoard.fireToken(playerFireShot1);
+
+	        //playerGameBoard.fireToken(7, 5);
+	        //playerGameBoard.fireToken(5, 10);
+	        //player.shiplist.add(playerFireShot1);
+
+
+	       // System.out.println( player.shiplist.toArray());
+
+
+	      //  System.out.println( player.shiplist.iterator());
+
+	       // playerGameBoard.ship(6, 5);
+	      //  playerGameBoard.ship(6, 5);
+	      //  playerGameBoard.ship(6, 6);
+	      //  playerGameBoard.ship(6, 7);
+
+	        //playerGameBoard.printGrid();
 
 
 	}

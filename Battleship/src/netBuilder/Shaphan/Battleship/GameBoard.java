@@ -76,14 +76,18 @@ public class GameBoard {
 		}
 	}
 
-	public void fire(int Coord[]) {
-		grid[Coord[0]][Coord[1]] = "X";
 
-	}
+    public void fireToken(int Coord[]) {
+        grid[Coord[0]][Coord[1]] = "*";
+    }
 
-	public void ship(int xCoord, int yCoord) {
-		grid[yCoord][xCoord] = "#";
+    public void shipToken(int Coord[]) {
+        grid[Coord[0]][Coord[1]] = "#";
 
-	}
+    }
+    public void hitToken(int Coord[]) {
+        grid[Coord[0]][Coord[1]] = "X";
+
+    }
 
 }

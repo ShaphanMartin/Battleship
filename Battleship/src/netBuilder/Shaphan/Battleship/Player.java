@@ -1,14 +1,15 @@
 package netBuilder.Shaphan.Battleship;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Player {
 
 	int noShots = 5;
 	int gridSize;
-	ArrayList<int[]> shiplist = new ArrayList<int[]>();
-
-
+	List<int[]> shotsFired = new ArrayList<int[]>();
+	List<int[]> shipHit = new ArrayList<int[]>();
+	List<int[]> ships = new ArrayList<int[]>();
 
 	public boolean checkValidCoord(int[] checkCoords, int gridSize) {
 		boolean inRange = false;
@@ -28,16 +29,11 @@ public class Player {
 				inRange = true;
 			}
 		} while (!inRange);
-/*
-		if (inRange && notHitShip) {
-			ValidCoord = true;
-
-			return ValidCoord;
-		} else {
-			ValidCoord = false;
-			return ValidCoord;
-		}
-*/
+		/*
+		 * if (inRange && notHitShip) { ValidCoord = true;
+		 * 
+		 * return ValidCoord; } else { ValidCoord = false; return ValidCoord; }
+		 */
 		return ValidCoord;
 	}
 
