@@ -3,19 +3,16 @@ package netBuilder.Shaphan.Battleship;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player {
+public class Player extends User {
 
-	int noShots = 5;
-	int gridSize;
 	List<int[]> shotsFired = new ArrayList<int[]>();
 	List<int[]> shipHit = new ArrayList<int[]>();
 	List<int[]> ships = new ArrayList<int[]>();
 
-	public boolean checkValidCoord(int[] checkCoords, int gridSize) {
+	public boolean checkValidCoord(int[] checkCoords) {
 		boolean inRange = false;
-		boolean ValidCoord = false;
-
-		do {
+		int gridSize = 11;
+		
 			if (checkCoords[0] > gridSize || checkCoords[1] > gridSize) {
 				System.out
 						.println("Coordiante is too big must be in range of your board size");
@@ -28,26 +25,29 @@ public class Player {
 			} else {
 				inRange = true;
 			}
-		} while (!inRange);
-		/*
-		 * if (inRange && notHitShip) { ValidCoord = true;
-		 * 
-		 * return ValidCoord; } else { ValidCoord = false; return ValidCoord; }
-		 */
-		return ValidCoord;
+		return inRange;
+		
+	}
+	
+	public boolean checkValidCoordNoMsg(int[] checkCoords) {
+		boolean inRange = false;
+		int gridSize = 11;
+			if (checkCoords[0] > gridSize || checkCoords[1] > gridSize) {
+				inRange = false;
+
+			} else if (checkCoords[0] < 0 || checkCoords[1] < 0) {
+				inRange = false;
+			} else {
+				inRange = true;
+			}
+		return inRange;
+		
 	}
 
 	public void TakeAShot(int[] shotCoords) {
 
 	}
 
-	public int getGridSize() {
-		return gridSize;
-	}
-
-	public void setGridSize(int gridSize) {
-		this.gridSize = gridSize;
-	}
 
 	public void placeShip(int[] playerStartCoord, int[] playerEndCoord,
 			int shipSize) {
@@ -83,6 +83,20 @@ public class Player {
 	public Player() {
 
 		// TODO Auto-generated constructor stub
+	}
+
+
+	@Override
+	public void Fire() {
+		
+		
+		
+	}
+
+	@Override
+	public void PlaceShip() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

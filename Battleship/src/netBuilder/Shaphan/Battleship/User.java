@@ -1,18 +1,19 @@
 package netBuilder.Shaphan.Battleship;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class User {
 	
-	public abstract void Postion();
+	List<int[]> shotsFired = new ArrayList<int[]>();
+	List<int[]> shipHit = new ArrayList<int[]>();
+	List<int[]> ships = new ArrayList<int[]>();
 	
-	public abstract void GrirdSize();
+	public abstract void Fire();
 	
-	public abstract void ListOfShips();
+	public abstract void PlaceShip();
 	
-	public abstract void ListOfFired();
-	
-	public abstract void ListOfHits();
 
-	public abstract void ListOfMisses();
 
 
 

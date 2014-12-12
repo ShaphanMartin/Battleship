@@ -20,7 +20,7 @@ public class GameBoard {
 
 	public void printGrid() {
 
-		char character = 'A';
+		//char character = 'A';
 		System.out.println("======================================================================================");
 		System.out.print(grid[0][0] = "\t ");
 
@@ -41,9 +41,10 @@ public class GameBoard {
 			}
 			System.out.println();
 			System.out.println();
-			grid[1][column] = String.valueOf(character);
-			character++;
-			System.out.print(grid[1][column] + "\t");
+			//grid[1][column] = String.valueOf(character);
+			
+			System.out.print(column + "\t");
+			//character++;
 			for (int row = 1; row < grid.length; row++) {
 
 				if (grid[row][column] == "X") {
@@ -53,6 +54,54 @@ public class GameBoard {
 					System.out.print("  " + grid[row][column] + "\t");
 				} else if (grid[row][column] == "#") {
 					System.out.print("  " + grid[row][column] + "\t");
+				} else {
+					grid[row][column] = "~";
+					System.out.print("  " + grid[row][column] + "\t");
+
+				}
+
+			}
+
+		}
+		System.out.println();
+
+	}
+	public void printGrid2() {
+
+		//char character = 'A';
+		System.out.println("======================================================================================");
+		System.out.print(grid[0][0] = "\t ");
+
+		// printing the row labels
+		for (int row = 1; row < grid.length; row++) {
+
+			grid[0][row] = String.valueOf(row);
+			System.out.print("  " + grid[0][row] + " \t");
+
+		}
+		System.out.println();
+
+		// printing the columns labels
+
+		for (int column = 1; column < grid.length; column++) {
+			if (column == 1){
+			System.out.println("======================================================================================");
+			}
+			System.out.println();
+			System.out.println();
+			//grid[1][column] = String.valueOf(character);
+			
+			System.out.print(column + "\t");
+			//character++;
+			for (int row = 1; row < grid.length; row++) {
+
+				if (grid[row][column] == "X") {
+					System.out.print("  " + grid[row][column] + "\t");
+
+				} else if (grid[row][column] == "*") {
+					System.out.print("  " + grid[row][column] + "\t");
+				//} else if (grid[row][column] == "#") {
+				//	System.out.print("  " + grid[row][column] + "\t");
 				} else {
 					grid[row][column] = "~";
 					System.out.print("  " + grid[row][column] + "\t");
